@@ -1,8 +1,4 @@
 "use client";
-import { loader } from "@monaco-editor/react";
-import * as monaco from "monaco-editor";
-loader.config({ monaco });
-
 import { useEffect, useRef, useState } from "react";
 import MonacoEditor from "@monaco-editor/react";
 import * as Y from "yjs";
