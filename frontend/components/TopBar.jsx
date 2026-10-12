@@ -1,15 +1,20 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { authClient, useSession } from "@/lib/auth";
 
 export default function TopBar() {
   const { user } = useSession();
-  const router = useRouter();
 
   async function signOut() {
-    await authClient.signOut();
-    router.replace("/sign-in");
+    try {
+      await authClient.signOut();
+    } catch (e) {
+      // Never let a failed sign-out leave the button looking dead.
+      console.error("[auth] signOut failed:", e);
+    }
+    // Hard navigation: clears every client-side cache and re-fetches the session,
+    // so stale `user` state can't keep you "signed in" after redirecting.
+    window.location.href = "/sign-in";
   }
 
   return (
