@@ -1,0 +1,57 @@
+# ---------- dependencies ----------
+node_modules/
+.pnp
+.pnp.js
+
+# ---------- secrets / env ----------
+# NEVER commit real credentials. Commit .env.example instead.
+.env
+.env.*
+!.env.example
+
+# ---------- Next.js ----------
+.next/
+out/
+build/
+.vercel
+.turbo
+.swc/
+next-env.d.ts
+*.tsbuildinfo
+
+# ---------- logs ----------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- caches / test output ----------
+.eslintcache
+.cache/
+coverage/
+
+# ---------- build output ----------
+dist/
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---------- editors ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.pem
+
+# ---------- prisma local artifacts ----------
+# Migrations ARE committed; only local db files are ignored.
+prisma/*.db
+prisma/*.db-journal
+
+# ---------- temp ----------
+.tmp/
+tmp/
